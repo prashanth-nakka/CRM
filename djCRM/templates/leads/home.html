@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Home Page</title>
+  </head>
+  <style>
+    a {
+      text-decoration: none;
+      color: black;
+    }
+  </style>
+  <body>
+    <h2>Home Page</h2>
+    <button>
+      <a href="/leads/create">Create a Lead</a>
+    </button>
+    <hr />
+    {% for lead in leads %}
+    <a href="/leads/detail/{{lead.id}}" style="color: Red"
+      ><p><b>{{lead.id}}</b></p></a
+    >
+    <p>{{lead.first_name}}</p>
+    <p>{{lead.last_name}}</p>
+    <p>{{lead.age}}</p>
+    <hr />
+    {% endfor %}
+  </body>
+</html>
